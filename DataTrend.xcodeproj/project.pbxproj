@@ -183,6 +183,7 @@
 				1BE0636D23368D6C005473A2 /* Sources */,
 				1BE0636E23368D6C005473A2 /* Frameworks */,
 				1BE0636F23368D6C005473A2 /* Resources */,
+				23F606036D828F97A3897F1D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -220,6 +221,7 @@
 				1BE0639123368D6E005473A2 /* Sources */,
 				1BE0639223368D6E005473A2 /* Frameworks */,
 				1BE0639323368D6E005473A2 /* Resources */,
+				6B5A5B47E68EC04314E2E492 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -322,6 +324,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		23F606036D828F97A3897F1D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DataTrend/Pods-DataTrend-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DataTrend/Pods-DataTrend-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DataTrend/Pods-DataTrend-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B5A5B47E68EC04314E2E492 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DataTrendUITests/Pods-DataTrendUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DataTrendUITests/Pods-DataTrendUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DataTrendUITests/Pods-DataTrendUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CC671ACA90AC864A6DE136B1 /* [CP] Check Pods Manifest.lock */ = {
