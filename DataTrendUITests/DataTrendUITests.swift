@@ -30,6 +30,13 @@ class DataTrendUITests: XCTestCase {
 
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        sleep(3)
+        app.tables/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"2011")/*[[".cells.containing(.staticText, identifier:\"14.638703\")",".cells.containing(.staticText, identifier:\"2011\")"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.images["warning"].tap()
+        app.alerts["Oops!"].scrollViews.otherElements.buttons["OK"].tap()
+        sleep(1)
+        XCUIApplication().tables/*@START_MENU_TOKEN@*/.staticTexts["0.000927"]/*[[".cells.staticTexts[\"0.000927\"]",".staticTexts[\"0.000927\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeDown()
+        sleep(2)
     }
 
     func testLaunchPerformance() {

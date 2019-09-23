@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     let refreshController = UIRefreshControl()
     
     var resultData: [DisplayModel] = []
+    let dataViewModel = DataViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,6 @@ class ViewController: UIViewController {
         
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         //Fetch data on load
         fetchData()
     }
@@ -49,12 +49,6 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Year\tVolume Of Mobile Data(PB)"
-    }
-}
-
-extension ViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -88,37 +82,14 @@ private extension ViewController {
             loader.startAnimating()
         }
         //Get data from API
-        DataViewModel().fetchDataWithLimit(limit: 100, completion: { [weak self] (result: [ResultModel], error: String?) in
+        dataViewModel.fetchDataWithLimit(limit: 100, completion: { [weak self] (result: [ResultModel], error: String?) in
             guard let self = self else { return }
             self.reloadResults(data: result)
         })
     }
-    
-    func convertData(data: [ResultModel]) -> [DisplayModel] {
-        var yearArray = [String]()
-        for obj in data {
-            yearArray.append(String(obj.quarter.prefix(4)))
-        }
-        yearArray = Array(Set(yearArray)).sorted()
-        
-        var groupArray: [DisplayModel] = []
-        for year in yearArray {
-            let yearObj = data.filter{$0.quarter.contains(year)}
-            let vol = yearObj.reduce(0) {$0 + (Double($1.volume) ?? 0)}
-            let resultObj = DisplayModel(year: year, volume: "\(vol)", isUsageDecreased: isUsageDecreased(year: year, withData: data))
-            groupArray.append(resultObj)
-        }
-        return groupArray
-    }
-    
-    func isUsageDecreased(year: String, withData data: [ResultModel]) -> Bool {
-        let yearObj = data.filter{$0.quarter.contains(year)}.sorted(by: {$0.quarter > $1.quarter})
-        let volArray = yearObj.map {$0.volume}
-        return !volArray.isSorted()
-    }
 
     func reloadResults(data: [ResultModel]) {
-        resultData = convertData(data: data)
+        resultData = dataViewModel.convertData(data: data)
         if resultData.count == 0 {
             Utility.showErrorAlert(with: "No data available at the moment, please try again after sometime.")
         }
