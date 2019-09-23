@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var loader: UIActivityIndicatorView!
     let refreshController = UIRefreshControl()
     
-    var resultData: [ResultModel] = []
+    var resultData: [DisplayModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
         }
         
         func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-            return "Quarter\tVolume Of Mobile Data(PB)"
+            return "Year\tVolume Of Mobile Data(PB)"
         }
     }
 
@@ -95,8 +95,25 @@ class ViewController: UIViewController {
             })
         }
         
+        func convertData(data: [ResultModel]) -> [DisplayModel] {
+            var yearArray = [String]()
+            for obj in data {
+                yearArray.append(String(obj.quarter.prefix(4)))
+            }
+            yearArray = Array(Set(yearArray)).sorted()
+            
+            var groupArray: [DisplayModel] = []
+            for year in yearArray {
+                let yearObj = data.filter{$0.quarter.contains(year)}
+                let vol = yearObj.reduce(0) {$0 + (Double($1.volume) ?? 0)}
+                let resultObj = DisplayModel(year: year, volume: "\(vol)")
+                groupArray.append(resultObj)
+            }
+            return groupArray
+        }
+        
         func reloadResults(data: [ResultModel]) {
-            resultData = data
+            resultData = convertData(data: data)
             if resultData.count == 0 {
                 Utility.showErrorAlert(with: "No data available at the moment, please try again after sometime.")
             }

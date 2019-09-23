@@ -27,3 +27,8 @@ struct DataModel: Codable
     var result:Result
     var success: Bool
 }
+
+struct DisplayModel {
+    var year: String
+    var volume: String
+}

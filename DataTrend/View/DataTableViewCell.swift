@@ -24,8 +24,8 @@ class DataTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(with resultObj: ResultModel) {
-        trendName?.text = resultObj.quarter
+    func configure(with resultObj: DisplayModel) {
+        trendName?.text = resultObj.year
         trendValue?.text = resultObj.volume
     }
 }
