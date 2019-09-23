@@ -31,4 +31,5 @@ struct DataModel: Codable
 struct DisplayModel {
     var year: String
     var volume: String
+    var isUsageDecreased: Bool
 }

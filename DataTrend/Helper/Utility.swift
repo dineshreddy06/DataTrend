@@ -52,3 +52,18 @@ extension UIColor {
         return UIColor(red: 12/255.0, green: 95/255.0, blue: 168/255.0, alpha: 1.0)
     }
 }
+
+extension Array where Element : Comparable {
+    func isSorted() -> Bool {
+        guard self.count > 1 else {
+            return true
+        }
+
+        for i in 1..<self.count {
+            if self[i-1] < self[i] {
+                return false
+            }
+        }
+        return true
+    }
+}

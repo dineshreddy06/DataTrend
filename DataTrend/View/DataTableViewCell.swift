@@ -17,6 +17,9 @@ class DataTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        trendThumbnail.addGestureRecognizer(tap)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -27,5 +30,10 @@ class DataTableViewCell: UITableViewCell {
     func configure(with resultObj: DisplayModel) {
         trendName?.text = resultObj.year
         trendValue?.text = resultObj.volume
+        trendThumbnail.isHidden = !resultObj.isUsageDecreased
+    }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        Utility.showErrorAlert(with: "Notices usage decline in quarter")
     }
 }
