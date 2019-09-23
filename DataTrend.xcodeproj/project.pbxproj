@@ -3,10 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B812C9A23388C760051173A /* ParseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B812C9023388C760051173A /* ParseManager.swift */; };
+		1B812C9B23388C760051173A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B812C9123388C760051173A /* NetworkManager.swift */; };
+		1B812C9C23388C760051173A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B812C9223388C760051173A /* Reachability.swift */; };
+		1B812C9D23388C760051173A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B812C9323388C760051173A /* Utility.swift */; };
+		1B812CA223388FDD0051173A /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B812CA123388FDD0051173A /* DataModel.swift */; };
+		1B812CA4233890AC0051173A /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B812CA3233890AC0051173A /* DataTableViewCell.swift */; };
+		1B812CA8233897DA0051173A /* DataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B812CA7233897DA0051173A /* DataViewModel.swift */; };
 		1BE0637523368D6C005473A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE0637423368D6C005473A2 /* AppDelegate.swift */; };
 		1BE0637723368D6C005473A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE0637623368D6C005473A2 /* SceneDelegate.swift */; };
 		1BE0637923368D6C005473A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE0637823368D6C005473A2 /* ViewController.swift */; };
@@ -39,6 +46,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B812C9023388C760051173A /* ParseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseManager.swift; sourceTree = "<group>"; };
+		1B812C9123388C760051173A /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		1B812C9223388C760051173A /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		1B812C9323388C760051173A /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		1B812CA123388FDD0051173A /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		1B812CA3233890AC0051173A /* DataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
+		1B812CA7233897DA0051173A /* DataViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewModel.swift; sourceTree = "<group>"; };
 		1BE0637123368D6C005473A2 /* DataTrend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataTrend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BE0637423368D6C005473A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BE0637623368D6C005473A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,8 +117,50 @@
 				70A553849F0F8B078A4F4CD8 /* Pods-DataTrendUITests.debug.xcconfig */,
 				A74F5068BF991C02058F698A /* Pods-DataTrendUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		1B812C8E23388C530051173A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1BE0637823368D6C005473A2 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1B812C8F23388C760051173A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				1B812C9023388C760051173A /* ParseManager.swift */,
+				1B812C9123388C760051173A /* NetworkManager.swift */,
+				1B812C9223388C760051173A /* Reachability.swift */,
+				1B812C9323388C760051173A /* Utility.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		1B812C9423388C760051173A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1B812CA123388FDD0051173A /* DataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1B812C9623388C760051173A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1B812CA3233890AC0051173A /* DataTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1B812C9823388C760051173A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1B812CA7233897DA0051173A /* DataViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		1BE0636823368D6C005473A2 = {
@@ -134,7 +190,11 @@
 			children = (
 				1BE0637423368D6C005473A2 /* AppDelegate.swift */,
 				1BE0637623368D6C005473A2 /* SceneDelegate.swift */,
-				1BE0637823368D6C005473A2 /* ViewController.swift */,
+				1B812C8E23388C530051173A /* Controllers */,
+				1B812C9823388C760051173A /* ViewModel */,
+				1B812C9423388C760051173A /* Model */,
+				1B812C9623388C760051173A /* View */,
+				1B812C8F23388C760051173A /* Helper */,
 				1BE0637A23368D6C005473A2 /* Main.storyboard */,
 				1BE0638023368D6E005473A2 /* Assets.xcassets */,
 				1BE0638223368D6E005473A2 /* LaunchScreen.storyboard */,
@@ -411,7 +471,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B812C9C23388C760051173A /* Reachability.swift in Sources */,
+				1B812C9B23388C760051173A /* NetworkManager.swift in Sources */,
 				1BE0637923368D6C005473A2 /* ViewController.swift in Sources */,
+				1B812CA223388FDD0051173A /* DataModel.swift in Sources */,
+				1B812C9A23388C760051173A /* ParseManager.swift in Sources */,
+				1B812C9D23388C760051173A /* Utility.swift in Sources */,
+				1B812CA4233890AC0051173A /* DataTableViewCell.swift in Sources */,
+				1B812CA8233897DA0051173A /* DataViewModel.swift in Sources */,
 				1BE0637F23368D6C005473A2 /* DataTrend.xcdatamodeld in Sources */,
 				1BE0637523368D6C005473A2 /* AppDelegate.swift in Sources */,
 				1BE0637723368D6C005473A2 /* SceneDelegate.swift in Sources */,
@@ -590,6 +657,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DataTrend/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -608,6 +676,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DataTrend/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

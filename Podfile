@@ -2,8 +2,6 @@
 # platform :ios, '9.0'
 
 def pods
-  pod 'SwiftyJSON'
-  pod 'Kingfisher'
   pod 'Alamofire', '~> 5.0.0-beta.5'
 end
 
